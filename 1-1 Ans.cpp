@@ -1,5 +1,4 @@
 #include <iostream>
-int stoneold(int);
 
 int main(){
     using namespace std;
