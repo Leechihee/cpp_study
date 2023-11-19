@@ -11,6 +11,7 @@ int main()
     cin >> input_old;
     cout << "현재 나이를 월수로 나타낼 경우 "
     << old(input_old) << "입니다." << endl;
+    return 0;
 }
 
 int old(int n)
