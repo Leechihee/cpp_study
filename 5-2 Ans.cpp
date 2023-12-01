@@ -15,8 +15,7 @@ int main()
     }
     for(int i = 0;i<=ArSize;i++)
     {
-        tamp = factorials[i];
+        cout << i << "! = " << factorials[i] << endl;
     }
-    cout << tamp;
     return 0;
 }
