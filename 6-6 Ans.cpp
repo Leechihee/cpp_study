@@ -59,5 +59,6 @@ int main()
         if(pd[i].money < 10000)
             cout << pd[i].name << endl;
     }
+    delete [] pd;
     return 0;
 }
