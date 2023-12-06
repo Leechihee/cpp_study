@@ -42,5 +42,7 @@ int main()
         if(temp > pd[i].money)
             cout << pd[i].first_name << " " << pd[i].last_name << endl;
     }
+    inFile.close();
+    delete [] pd;
     return 0;
 }
