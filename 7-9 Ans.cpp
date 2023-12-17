@@ -30,6 +30,7 @@ int main()
         cout << endl;
     }
     display3(ptr_stu,class_size);
+    delete [] ptr_stu;
     cout << "프로그램을 종료합니다.";
     return 0;
 }
