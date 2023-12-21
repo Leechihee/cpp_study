@@ -10,7 +10,8 @@ namespace
 
 void setgolf(golf &g, const char *name, int hc)
 {
-    *g.fullname = *name;
+    for(int i = 0;name[i] != '\0';i++)
+        g.fullname[i] = name[i];
     g.handicap = hc;
 }
 
