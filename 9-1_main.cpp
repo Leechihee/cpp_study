@@ -35,15 +35,13 @@ int main()
         for(int k = 0;k<10;k++)
             cout << endl;
         cout << ct << "번째 골프가 끝났습니다.\n";
-        cout << "계속 하시겠습니까? (y/n) : ";
-        cin>>ans; 
-        while(ans != 'y' && ans != 'Y' && ans != 'N' && ans != 'n')
+        cout << "계속 하시겠습니까? (n을 입력하면 종료) : ";
+        while(!(cin>>ans))
         {
             cin.clear();
             while(cin.get() != '\n')
                 continue;
-            cout << "y/n중 하나를 입력하세요. : ";
-            cin>>ans;
+            cout << "문자를 입력하세요. : ";
         }
         if(ans == 'N' || ans == 'n')
             break;
@@ -66,9 +64,15 @@ int main()
             cout << "Golffer" << j+1 << ": ";
             showgolf(golffer[j]);
         }
-        
         ct++;
-    }while(ans == 'y' || ans == 'Y');
+        while(1)
+        {
+            cin.clear();
+            while(cin.get() != '\n')
+                continue;
+            break;
+        }
+    }while(1);
     cout << "골프를 종료합니다.";
     return 0;
 }
