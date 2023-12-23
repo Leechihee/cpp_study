@@ -4,14 +4,14 @@
 class bank
 {
 private:
-    std::string name;
-    std::string account;
-    long long money;
+    std::string Bname;
+    std::string Baccount;
+    unsigned long Bmoney;
 public:
     bank();
-    bank(const std::string name, const std::string account, long long n);
+    bank(const std::string name, const std::string account, unsigned long n);
     ~bank();
-    void show(const bank &b) const;
-    void inMoney(const std::string account, long long n);
-    void outMoney(const std::string account, long long n);
+    void show() const;
+    void inMoney(unsigned long n);
+    void outMoney(unsigned long n);
 };
