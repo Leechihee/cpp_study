@@ -6,5 +6,5 @@ class Plorg{
 public:
     Plorg(char * Iname = "Plorga");
     void setCI(int n);
-    void showPlorg();
+    void showPlorg() const;
 };
