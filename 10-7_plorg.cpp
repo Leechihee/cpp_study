@@ -12,7 +12,7 @@ void Plorg::setCI(int n)
     ci = n;
 }
 
-void Plorg::showPlorg()
+void Plorg::showPlorg() const;
 {
     using std::cout;
     using std::endl;
