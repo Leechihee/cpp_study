@@ -20,23 +20,25 @@ void List::setIndexVelue(double n)
     newIndex->N = n;
     newIndex->next = NULL;
     if(head->next == NULL)
+    {
         head->next = newIndex; // head->newIndex
         return;
+    }
     beforeIndex = head->next;
     while(beforeIndex->next != NULL) 
         beforeIndex = beforeIndex->next;
     beforeIndex->next = newIndex;
-    cout << "벨류값을 입력하였습니다.";
 }
 
 void List::showIndex()
 {
     node * Index = head->next;
-    /*while(Index->next != NULL)
+    while(Index->next != NULL)
     {
         cout << Index->N << endl;
         Index = Index->next;
-    }*/
+    }
+    cout << Index->N << endl;
 }
 
 void List::useIndexVelue(void (*pf)(double &))
@@ -48,4 +50,6 @@ void List::useIndexVelue(void (*pf)(double &))
         cout << endl;
         beforeIndex = beforeIndex->next;
     }
+    pf(beforeIndex->N);
+    cout << endl;
 }
