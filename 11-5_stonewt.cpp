@@ -21,21 +21,10 @@ Stonewt::Stonewt()
 
 Stonewt::~Stonewt(){}
 
-std::ostream & operator<<(std::ostream & os, const Stonewt & s, const char form)
+std::ostream & operator<<(std::ostream & os, const Stonewt & s)
 {
-    if(form == 'l')
-    {
-        os << pounds << "pounds";
-        return os;
-    }
-    else if(form == 's')
-    {
-        os << stone << "stone, " << lbs_left << "pounds";
-        return os;
-    }
-    else
-    {
-        cout << "출력값의 형태오류 출력 하지 않습니다.\n";
-        return os;
-    }
+    os << s.stone << " stone, " << s.pds_left << " pounds";
+    os << " / ";
+    os << s.pounds << " pounds";
+    return os;
 }
