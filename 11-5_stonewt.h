@@ -13,6 +13,6 @@ public:
     ~Stonewt();
     Stonewt operator+(const Stonewt &s) const {return Stonewt(pounds+s.pounds);}
     Stonewt operator-(const Stonewt &s) const {return Stonewt(pounds-s.pounds);}
-    Stonewt operator*(const Stonewt &s) const;
+    Stonewt operator*(const Stonewt &s) const {return Stonewt(pounds * s.pounds);}
     friend std::ostream & operator<<(std::ostream & os, const Stonewt & s);
 };
