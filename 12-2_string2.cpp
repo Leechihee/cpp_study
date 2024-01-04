@@ -69,7 +69,7 @@ String & String::operator=(const String & s)
         
     delete [] str;
     len = s.len;
-    str = new char[s.len+1];
+    str = new char[len+1];
     strcpy(str,s.str);
     return *this;
 }
@@ -85,22 +85,41 @@ String & String::operator=(const char * s)
 
 String & String::operator+(const String & s)
 {
-    char temp = *str;
+    char * temp = new char[s.len+1];
+    len = len + s.len;
+    strcpy(temp,str);
     delete [] str;
-    len = len+s.len;
     str = new char[len+1];
-    str = strcat(temp,s.str);
+    strcpy(str,temp);
+    delete [] temp;
+    strcat(str,s.str);
     return *this;
 }
 
 String & String::operator+(const char* cs)
 {
-    char * temp = str;
+    char * temp = new char[strlen(cs)+1];
+    len = len + strlen(cs);
+    strcpy(temp,str);
     delete [] str;
-    len = len+strlen(cs);
     str = new char[len+1];
-    str = strcat(temp,cs);
+    strcpy(str,temp);
+    delete [] temp;
+    strcat(str,cs);
     return *this;
+}
+
+String & operator+(const char* cs, String &s)
+{
+    char * temp = new char[s.len+1];
+    s.len = s.len + strlen(cs);
+    strcat(temp,s.str);
+    delete [] s.str;
+    s.str = new char[s.len+1];
+    strcpy(s.str,cs);
+    strcat(s.str,temp);
+    delete [] temp;
+    return s;
 }
 
 ostream & operator<<(ostream & os, const String & s)
