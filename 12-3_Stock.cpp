@@ -1,7 +1,7 @@
-#include "Stack.h"
+#include "Stock.h"
 #include <cstring>
 
-Stack::Stack()
+Stock::Stock()
 {
     company = new char[strlen("no name")];
     strcpy(company,"no name");
@@ -10,7 +10,7 @@ Stack::Stack()
     total_val = 0.0;
 }
 
-Stack::Stack(const char * co, long n,double pr)
+Stock::Stock(const char * co, long n,double pr)
 {
     company = new char[strlen(co)];
     strcpy(company,co);
@@ -26,12 +26,12 @@ Stack::Stack(const char * co, long n,double pr)
     set_tot();
 }
 
-Stack::~Stack()
+Stock::~Stock()
 {
     delete [] company;
 }
 
-void Stack::buy(long n, double pr)
+void Stock::buy(long n, double pr)
 {
     if( n < 0)
     {
@@ -46,7 +46,7 @@ void Stack::buy(long n, double pr)
     }
 }
 
-void Stack::sell(long n, double pr)
+void Stock::sell(long n, double pr)
 {
     using std::cout;
     if(n<0)
@@ -67,13 +67,13 @@ void Stack::sell(long n, double pr)
     }
 }
 
-void Stack::update(double pr)
+void Stock::update(double pr)
 {
     share_val = pr;
     set_tot();
 }
 
-std::ostream & operator<<(std::ostream & os, const Stack & s)
+std::ostream & operator<<(std::ostream & os, const Stock & s)
 {
     using std::cout;
     using std::ios_base;
@@ -92,7 +92,7 @@ std::ostream & operator<<(std::ostream & os, const Stack & s)
     return os;
 }
 
-const Stack & Stack::topval(const Stack & s) const
+const Stock & Stock::topval(const Stock & s) const
 {
     if(s.total_val > total_val)
         return s;
