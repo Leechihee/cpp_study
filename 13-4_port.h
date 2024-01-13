@@ -17,7 +17,7 @@ public:
     friend ostream & operator<<(ostream & os, const Port & p);
 };
 
-class VintagePort{
+class VintagePort : public Port{
     char * nickname;
     int year;
 public:
