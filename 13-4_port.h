@@ -22,7 +22,7 @@ class VintagePort : public Port{
     int year;
 public:
     VintagePort();
-    VintagePort(const char * br = "none", const char * nn = "none", int b = 0);
+    VintagePort(const char * br,int b, const char * nn, int y);
     VintagePort(const VintagePort & vp);
     ~VintagePort() { delete [] nickname; }
     VintagePort & operator=(const VintagePort & vp);
