@@ -34,6 +34,7 @@ class Wine{
     int years;
     PairArray * wine_infor;
 public:
+    Wine();
     Wine(const char * la, int y, const int yt[], const int bot[]);
     Wine(const char * la, int y);
     ~Wine() {delete [] label; delete wine_infor;}
