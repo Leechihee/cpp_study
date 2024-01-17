@@ -28,6 +28,9 @@ Wine::Wine(const char * la, int y, const int yt[], const int bot[]) : years(y)
 Wine::Wine(const char * la, int y) : years(y)
 {
     label = new char[strlen(la)+1];
+    ArrayInt year(years);
+    ArrayInt bottles(years);
+    wine_infor = new PairArray(year,bottles);
     strcpy(label,la);
 }
 
@@ -65,6 +68,10 @@ void Wine::Show() const
     cout << "\t년도\t수량\n";
     for(int i = 0;i<years;i++)
         { 
-            cout << "\t"; wine_infor->first()[i]; cout << "\t"; wine_infor->second()[i]; cout << endl;
+            cout << "\t"; 
+            cout<< wine_infor->first()[i]; 
+            cout << "\t"; 
+            cout << wine_infor->second()[i]; 
+            cout << endl;
         }
 }
