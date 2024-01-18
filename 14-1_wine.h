@@ -40,6 +40,6 @@ public:
     ~Wine() {delete [] label; delete wine_infor;}
     void GetBottles();
     void Show() const;
-    const char * Lable() const {return label;}
+    const char * Label() const {return label;}
     int sum() const {return wine_infor->second().sum();}
 };
