@@ -34,7 +34,7 @@ class Singer : virtual public Worker{
 protected:
     enum {other, alto, contralto, soprano, bass, baritone, tenor};
     enum {Vtypes = 7};
-    void Data();
+    void Data() const;
     void Get();
 private:
     static char *pv[Vtypes];
@@ -49,7 +49,7 @@ public:
 
 class SingingWaiter : public Waiter, public Singer{
 protected:
-    void Data();
+    void Data() const;
     void Get();
 public:
     SingingWaiter() : Worker(), Waiter(), Singer() {}
