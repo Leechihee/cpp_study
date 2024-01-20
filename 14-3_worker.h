@@ -27,7 +27,7 @@ public:
     Waiter(const std::string name, long n, int p) : Worker(name,n), panache(p) {}
     Waiter(const Worker & w, int p) : Worker(w), panache(p) {}
     void set();
-    void show();
+    void show() const;
 };
 
 class Singer : virtual public Worker{
