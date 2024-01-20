@@ -1,3 +1,5 @@
+#ifndef WINE_H_
+#define WINE_H_
 #include <valarray>
 #include <string>
 
@@ -42,3 +44,5 @@ public:
     const std::string & Label() const {return (const std::string &)(*this);}
     int sum() const {return PairArray::second().sum();}
 };
+
+#endif
