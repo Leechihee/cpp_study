@@ -1,3 +1,5 @@
+#ifndef MOVE_H_
+#define MOVE_H_
 #include <iostream>
 
 class Move{
@@ -9,3 +11,5 @@ public:
     void showMove() const;
     void reset(double a = 0, double b = 0);
 };
+
+#endif
