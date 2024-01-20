@@ -1,3 +1,5 @@
+#ifndef COMPLEX0_H_
+#define COMPLEX0_H_
 #include <iostream>
 
 class complex{
@@ -16,3 +18,5 @@ public:
     friend bool operator>>(std::istream & is, complex &c);
     friend std::ostream & operator<<(std::ostream & os, const complex &c);
 };
+
+#endif
