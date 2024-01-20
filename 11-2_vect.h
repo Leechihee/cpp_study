@@ -1,3 +1,5 @@
+#ifndef VECT_H_
+#define VECT_H_
 #include <iostream>
 #include <cmath>
 
@@ -35,3 +37,5 @@ namespace VECTOR
         friend std::ostream & operator<<(std::ostream & os, const Vector &v);
     };
 }
+
+#endif
