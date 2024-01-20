@@ -1,3 +1,5 @@
+#ifndef GOLF_H_
+#define GOLF_H_
 #include <iostream>
 
 const int Len = 40;
@@ -15,3 +17,5 @@ int setgolf(golf &g);
 void handicap(golf &g, int hc);
 
 void showgolf(const golf &g);
+
+#endif
