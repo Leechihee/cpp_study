@@ -86,7 +86,7 @@ int main()
                 {
                     case 't':
                         cout << "\t모 기업의 사원 정보\n";
-                        for(int i = 0;i<count;i)
+                        for(int i = 0;i<count;i++)
                         {
                             WorkerInforDB[i]->show();
                             cout << endl << endl;
@@ -97,7 +97,7 @@ int main()
                         cin >> int_ans;
                         if(int_ans <= count)
                         {
-                            WorkerInforDB[int_ans]->show();
+                            WorkerInforDB[int_ans-1]->show();
                             cout << endl;
                         }
                         else
@@ -107,12 +107,14 @@ int main()
                         cout << "비정상적인 접근입니다! 사원정보출력을 취소합니다!\n";
                         break;
                 }
+                break;
             case 'D':
                 cout << "수정할 사원 정보의 번호를 입력하시오: ";
                 cin >> int_ans;
+                newlinedelete();
                 if(int_ans <= count)
                 {
-                    WorkerInforDB[int_ans]->set();
+                    WorkerInforDB[int_ans-1]->set();
                     cout << "정상적으로 사원정보를 수정하였습니다.\n";
                 }
                 else
