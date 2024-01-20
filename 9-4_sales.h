@@ -1,3 +1,5 @@
+#ifndef SALES_H_
+#define SALES_H_
 #include <iostream>
 
 namespace SALES
@@ -17,3 +19,5 @@ namespace SALES
     
     void showSales(const Sales & s);
 }
+
+#endif
