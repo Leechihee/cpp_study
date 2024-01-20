@@ -13,6 +13,19 @@ List::List()
     cout << "리스트를 선언하였습니다.\n";
 }
 
+List::~List()
+{
+    node * temp;
+    while(head->next != NULL)
+    {
+        temp = head->next;
+        head->next = temp->next;
+        delete temp;
+        cout<<"test\n";
+    }
+    delete head;
+}
+
 void List::setIndexVelue(double n)
 {
     node * newIndex = new node;
