@@ -57,7 +57,7 @@ void Waiter::set()
     Get();
 }
 
-void Waiter::show()
+void Waiter::show() const
 {
     cout << "직종 : 웨이터\n";
     Worker::Data();
