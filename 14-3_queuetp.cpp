@@ -1,15 +1,16 @@
 #include "queuetp.h"
+#include "worker.h"
 
 //Queuetp public method
 template<class T>
 QueueTP<T>::~QueueTP()
 {
     node * temp;
-    for(int i =0;head->next != NULL;i++)
+    while(head->next != NULL)
     {
-        head = head->next->next;
         temp = head->next;
-        delete temp; 
+        head->next = temp->next;
+        delete temp;
     }
     delete head;
 }
@@ -33,7 +34,7 @@ int QueueTP<T>::queuecount() const
 }
 
 template<class T>
-bool QueueTP<T>::enqueue(const T & item)
+bool QueueTP<T>::enqueue(const T item)
 {
     if(isfull())
         return false;
@@ -55,15 +56,28 @@ bool QueueTP<T>::enqueue(const T & item)
 }
 
 template<class T>
-bool QueueTP<T>::dequeue(T & item)
+bool QueueTP<T>::dequeue(int i)
 {
     if(isempty())
         return false;
-    node * temp = head;
-    while(temp->next != NULL)
-        temp = temp->next;
-    item = temp->ITEM;
-    items--;
+    node * temp;
+    node * before = head;
+    for(int j = 0;j<i-1;j++)
+        before = before->next;
+    temp = before->next;
+    before->next = before->next->next;
     delete temp;
+    items--;
     return true;
 }
+
+template<class T>
+T & QueueTP<T>::operator[](int i)
+{
+    node * temp = head;
+    for(int j = 0;j<i;j++)
+        temp = temp->next;
+    return temp->ITEM;
+}
+
+template class QueueTP<Worker*>;
