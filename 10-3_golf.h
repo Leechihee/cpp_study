@@ -1,3 +1,5 @@
+#ifndef GOLF_H_
+#define GOLF_H_
 #include <iostream>
 
 class golf{
@@ -15,3 +17,4 @@ public:
     void showgolf() const;
 };
 
+#endif
