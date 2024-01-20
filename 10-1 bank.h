@@ -1,3 +1,6 @@
+#ifndef BANK_H_
+#define BANK_H_
+
 #include <iostream>
 #include <string>
 
@@ -15,3 +18,5 @@ public:
     void inMoney(unsigned long n);
     void outMoney(unsigned long n);
 };
+
+#endif
