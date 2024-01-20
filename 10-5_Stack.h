@@ -1,3 +1,5 @@
+#ifndef STACK_H_
+#define STACK_H_
 #include <iostream>
 
 struct customer
@@ -19,3 +21,5 @@ public:
     bool push(const Item & item);
     bool pop(Item & item);
 };
+
+#endif
