@@ -1,3 +1,5 @@
+#ifndef STONEWT_H_
+#define STONEWT_H_
 #include <iostream>
 
 class Stonewt
@@ -16,3 +18,5 @@ public:
     Stonewt operator*(const Stonewt &s) const {return Stonewt(pounds * s.pounds);}
     friend std::ostream & operator<<(std::ostream & os, const Stonewt & s);
 };
+
+#endif
