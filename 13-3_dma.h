@@ -1,3 +1,5 @@
+#ifndef DMA_H_
+#define DMA_H_
 #include <iostream>
 
 class abcDMA{
@@ -40,3 +42,5 @@ public:
     void View() const;
     hasDMA & operator=(const hasDMA & hD);
 };
+
+#endif
