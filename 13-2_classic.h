@@ -1,3 +1,6 @@
+#ifndef CLASSIC_H_
+#define CLASSIC_H_
+
 class Cd{
     char * performers;
     char * label;
@@ -22,3 +25,5 @@ public:
     void report() const;
     Classic & operator=(const Classic & cl);
 };
+
+#endif
