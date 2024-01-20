@@ -1,3 +1,5 @@
+#ifndef STACK_H_
+#define STACK_H_
 #include <iostream>
 
 class Stock{
@@ -16,3 +18,5 @@ public:
     friend std::ostream & operator<<(std::ostream & os, const Stock & s);
     const Stock & topval(const Stock & s) const;
 };
+
+#endif
