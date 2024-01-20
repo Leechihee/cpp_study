@@ -21,7 +21,6 @@ List::~List()
         temp = head->next;
         head->next = temp->next;
         delete temp;
-        cout<<"test\n";
     }
     delete head;
 }
