@@ -1,3 +1,5 @@
+#ifndef STRING2_H_
+#define STRING2_H_
 #include <iostream>
 #include <cstring>
 using std::ostream;
@@ -31,3 +33,5 @@ public:
     static int HowMany() {return num_strings;}
     static const int CINLIM = 80;
 };
+
+#endif
