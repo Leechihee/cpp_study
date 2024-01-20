@@ -1,3 +1,5 @@
+#ifndef PLORG_H_
+#define PLORG_H_
 #include <iostream>
 
 class Plorg{
@@ -8,3 +10,5 @@ public:
     void setCI(int n);
     void showPlorg() const;
 };
+
+#endif
