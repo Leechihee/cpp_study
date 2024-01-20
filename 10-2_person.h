@@ -1,3 +1,6 @@
+#ifndef PERSON_H_
+#define PERSON_H_
+
 #include <iostream>
 #include <string>
 
@@ -16,3 +19,5 @@ public:
     void Show() const;
     void FormalShow() const;
 };
+
+#endif
