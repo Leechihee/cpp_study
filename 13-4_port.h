@@ -1,3 +1,5 @@
+#ifndef PORT_H_
+#define PORT_H_
 #include <iostream>
 using namespace std;
 
@@ -29,3 +31,5 @@ public:
     void Show() const;
     friend ostream & operator<<(ostream & os, const VintagePort & vp);
 };
+
+#endif
