@@ -1,3 +1,5 @@
+#ifndef SALES_H_
+#define SALES_H_
 #include <iostream>
 #include <cfloat>
 
@@ -33,3 +35,5 @@ namespace SALES
         void showSales();
     };
 }
+
+#endif
