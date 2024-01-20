@@ -1,3 +1,5 @@
+#ifndef WINE_H_
+#define WINE_H_
 #include <valarray>
 
 //Pair Class
@@ -43,3 +45,5 @@ public:
     const char * Label() const {return label;}
     int sum() const {return wine_infor->second().sum();}
 };
+
+#endif
