@@ -1,3 +1,5 @@
+#ifndef STACK_H_
+#define STACK_H_
 typedef unsigned long Item;
 
 class Stack{
@@ -15,3 +17,5 @@ public:
     bool pop(Item & item);
     Stack & operator=(const Stack &st);
 };
+
+#endif
