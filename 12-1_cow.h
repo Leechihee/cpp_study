@@ -1,3 +1,5 @@
+#ifndef COW_H_
+#define COW_H_
 class Cow
 {
     char name[20];
@@ -11,3 +13,5 @@ public:
     Cow & operator=(const Cow & c);
     void ShowCow() const;
 };
+
+#endif
