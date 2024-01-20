@@ -11,7 +11,7 @@ class QueueTP{
         struct node * next = NULL;
     };
     enum {QSIZE = 10};
-    node * head;
+    node * head = new node;
     int items = 0;
     const int qsize;
     QueueTP(const QueueTP & qt) : qsize(0) {}
@@ -22,7 +22,8 @@ public:
     bool isempty() const;
     bool isfull() const;
     int queuecount() const;
-    bool enqueue(const T & item);
-    bool dequeue(T & item);
+    bool enqueue(const T item);
+    bool dequeue(int i);
+    T & operator[](int i);
 };
 #endif
