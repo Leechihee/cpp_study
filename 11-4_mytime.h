@@ -1,3 +1,5 @@
+#ifndef MYTIME_H_
+#define MYTIME_H_
 #include <iostream>
 
 class Time
@@ -16,3 +18,5 @@ public:
     friend Time operator*(double n, const Time &t) {return t*n;}
     friend std::ostream & operator<<(std::ostream & os, const Time &t);
 };
+
+#endif
