@@ -71,9 +71,10 @@ int main()
             case 'B':
                 cout << "제거할 사원정보의 번호를 입력하시오.";
                 cin >> int_ans;
-                if(int_ans <= count && WorkerInforDB.dequeue(int_ans))
+                if(int_ans <= count && WorkerInforDB.dequeue(int_ans,temp))
                 {
                     cout << "정상적으로 사원정보가 제거되었습니다.\n";
+                    delete temp;
                     count--;
                 }
                 else
@@ -86,7 +87,7 @@ int main()
                 {
                     case 't':
                         cout << "\t모 기업의 사원 정보\n";
-                        for(int i = 0;i<count;i++)
+                        for(int i = 1;i<count+1;i++)
                         {
                             WorkerInforDB[i]->show();
                             cout << endl << endl;
@@ -121,11 +122,19 @@ int main()
                     cout << "비정상적인 접근입니다! 사원정보수정을 취소합니다!\n";
                 break;
             default:
-                cout << "비정상적인 접근입니다! 처음으로 돌아갑니다!\n";
+                cout << "비정상적인 접근입니다!\n";
                 break;
         }
     }
-    delete temp;
+    if(!WorkerInforDB.isempty())
+    {
+        for(int i = 0;i<count;i++)
+        {
+            cout << i << endl;
+            WorkerInforDB.dequeue(i,temp);
+            delete temp;
+        }
+    }
     cout << "프로그램 종료";
     return 0;
 }
