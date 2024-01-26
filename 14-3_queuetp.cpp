@@ -56,16 +56,17 @@ bool QueueTP<T>::enqueue(const T item)
 }
 
 template<class T>
-bool QueueTP<T>::dequeue(int i)
+bool QueueTP<T>::dequeue(int i,T item)
 {
     if(isempty())
         return false;
     node * temp;
     node * before = head;
-    for(int j = 0;j<i-1;j++)
+    for(int j = 0;j<i;j++)
         before = before->next;
-    temp = before->next;
-    before->next = before->next->next;
+    temp = before;
+    before = before->next;
+    item = temp->ITEM;
     delete temp;
     items--;
     return true;
