@@ -23,7 +23,7 @@ public:
     bool isfull() const;
     int queuecount() const;
     bool enqueue(const T item);
-    bool dequeue(int i);
+    bool dequeue(int i, T item);
     T & operator[](int i);
 };
 #endif
