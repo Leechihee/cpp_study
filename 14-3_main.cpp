@@ -98,7 +98,7 @@ int main()
                         cin >> int_ans;
                         if(int_ans <= count)
                         {
-                            WorkerInforDB[int_ans-1]->show();
+                            WorkerInforDB[int_ans]->show();
                             cout << endl;
                         }
                         else
@@ -115,7 +115,7 @@ int main()
                 newlinedelete();
                 if(int_ans <= count)
                 {
-                    WorkerInforDB[int_ans-1]->set();
+                    WorkerInforDB[int_ans]->set();
                     cout << "정상적으로 사원정보를 수정하였습니다.\n";
                 }
                 else
@@ -130,7 +130,6 @@ int main()
     {
         for(int i = 0;i<count;i++)
         {
-            cout << i << endl;
             WorkerInforDB.dequeue(i,temp);
             delete temp;
         }
