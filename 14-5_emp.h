@@ -1,3 +1,6 @@
+#ifndef EMP_H_
+#define EMP_H_
+
 #include <iostream>
 #include <string>
 
@@ -7,7 +10,8 @@ class abstr_emp{
     std::string job;
 public:
     abstr_emp();
-    abstr_emp(cosnt std::string & fn, const std::string & ln, const std::string & j);
+    abstr_emp(const std::string & fn, const std::string & ln, const std::string & j);
+    abstr_emp(const abstr_emp & e);
     virtual void ShowAll() const;
     virtual void SetAll();
     friend std::ostream & operator<<(std::ostream & os, const abstr_emp & e);
@@ -17,9 +21,10 @@ public:
 class employee : public abstr_emp{
 public:
     employee();
-    employee(cosnt std::string & fn, const std::string & ln, const std::string & j);
-    virtual void ShowAll() const;
-    virtual void SetAll();
+    employee(const std::string & fn, const std::string & ln, const std::string & j);
+    employee(const employee & e);
+    void ShowAll() const;
+    void SetAll();
 };
 
 class manager : virtual public abstr_emp{
@@ -29,11 +34,11 @@ protected:
     int & InChargeOF() {return inchargeof;}
 public:
     manager();
-    manager(cosnt std::string & fn, const std::string & ln, const std::string & j,int ico = 0);
+    manager(const std::string & fn, const std::string & ln, const std::string & j,int ico = 0);
     manager(const abstr_emp & e, int ico);
-    manager(const manager * m);
-    virtual void ShowAll() const;
-    virtual void SetAll();
+    manager(const manager & m);
+    void ShowAll() const;
+    void SetAll();
 };
 
 class fink : virtual public abstr_emp{
@@ -43,21 +48,23 @@ protected:
     std::string & ReportsTo() {return reportsto;}
 public:
     fink();
-    fink(cosnt std::string & fn, const std::string & ln, const std::string & j,const std::string & rpo);
+    fink(const std::string & fn, const std::string & ln, const std::string & j,const std::string & rpo);
     fink(const abstr_emp & e, const std::string & rpo);
     fink(const fink & f);
-    virtual void ShowAll() const;
-    virtual void SetAll();
+    void ShowAll() const;
+    void SetAll();
 };
 
 class highfink : public manager, public fink{
 public:
     highfink();
-    highfink(cosnt std::string & fn, const std::string & ln, const std::string & j, const std::string & rpo, int ico);
-    highfink(const abstr_emp * e,const std::string rpo, int ico);
+    highfink(const std::string & fn, const std::string & ln, const std::string & j, const std::string & rpo, int ico);
+    highfink(const abstr_emp & e,const std::string rpo, int ico);
     highfink(const manager & m, const std::string rpo);
     highfink(const fink & f, int ico);
     highfink(const highfink & h);
-    virtual void ShowAll() const;
-    virtual void SetAll();
+    void ShowAll() const;
+    void SetAll();
 };
+
+#endif
