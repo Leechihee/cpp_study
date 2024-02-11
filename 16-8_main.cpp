@@ -27,14 +27,20 @@ string ToLower(string & s)
 }
 int main()
 {
+    cout << "메트 리스트\n";
     list<string> mat(in_name<string>());
+    cout << "페트 리스트\n";
     list<string> pat(in_name<string>());
     
+    cout << "\n메트가 초대한 사람의 이름 목록\n";
+    for_each(mat.begin(),mat.end(),out<string>);
+    cout << "\n페트가 초대한 사람의 이름 목록\n";
+    for_each(pat.begin(),pat.end(),out<string>);
     list<string> total;
     total.splice(total.begin(),mat);
     total.splice(total.begin(),pat);
     total.sort();
-    cout << "메트와 패트가 초대한 사람의 이름 목록 :\n";
+    cout << "\n메트와 패트가 초대한 사람의 이름 목록 :\n";
     total.unique();
     for_each(total.begin(),total.end(),out<string>);
 }
