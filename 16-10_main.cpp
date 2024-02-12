@@ -21,15 +21,16 @@ void out(const shared_ptr<Review> p);
 
 int main()
 {
-    vector<shared_ptr<Review>> books;
+    vector<shared_ptr<Review>> books, temps;
     shared_ptr<Review> temp;
     char ans;
     while(fill(temp))
         books.push_back(temp);
     while(books.size() > 0 && ans != 'q')
     {
-        cout << "A.입력순 \t B.문자순 \n C.가격 내림차순\tD.가격 올림차순\nQ.끝내기\n";
-        cout << "표기 순서를 입력하시오 : ";
+        temps = books;
+        cout << "A.입력순\tB.문자순\tC.등급순\nD.가격 내림차순\tE.가격 올림차순\tQ.끝내기\n";
+        cout << "표기 방법를 입력하시오 : ";
         cin >> ans;
         cout << "\t등급 / 제목 / 가격\n";
         switch(tolower(ans))
@@ -38,18 +39,23 @@ int main()
                 for_each(books.begin(),books.end(),out);
                 continue;
             case 'b':
-                sort(books.begin(),books.end());
-                for_each(books.begin(),books.end(),out);
+                sort(temps.begin(),temps.end());
+                for_each(temps.begin(),temps.end(),out);
                 continue;
             case 'c':
-                sort(books.rbegin(),books.rend(),rating_then);
-                for_each(books.begin(),books.end(),out);
+                sort(temps.begin(),temps.end(),rating_then);
+                for_each(temps.begin(),temps.end(),out);
                 continue;
             case 'd':
-                sort(books.begin(),books.end(),rating_then);
-                for_each(books.begin(),books.end(),out);
+                sort(temps.rbegin(),temps.rend(),price_then);
+                for_each(temps.begin(),temps.end(),out);
+                continue;
+            case 'e':
+                sort(temps.begin(),temps.end(),price_then);
+                for_each(temps.begin(),temps.end(),out);
                 continue;
             case 'q':
+                ans = 'q';
                 break;
             default:
                 cout << "선택지에 없는 선택입니다.\n";
@@ -91,13 +97,13 @@ void out(const shared_ptr<Review> p)
     cout << p->rating << "\t" << p->title << "\t" << p->price << endl;
 }
 
-bool operator<(const Review & r1, const Review &r2)
+bool operator<(const shared_ptr<Review> & r1, const shared_ptr<Review> &r2)
 {
-    if(r1.title < r2.title)
+    if(r1->title < r2->title)
         return true;
-    else if(r1.rating < r2.rating)
+    else if(r1->rating < r2->rating)
         return true;
-    else if(r1.price < r2.price)
+    else if(r1->price < r2->price)
         return true;
     else
         return false;
