@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-#include "classic.h"
+#include "../header/classic2.h"
 
 void bravo(const Cd & disk);
 

@@ -1,4 +1,4 @@
-#include "string2.h"
+#include "../header/string2.h"
 
 namespace 
 {

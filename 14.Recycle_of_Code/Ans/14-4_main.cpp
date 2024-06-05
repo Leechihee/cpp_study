@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstring>
 #include <cctype>
-#include "person.h"
+#include "../header/person.h"
 const int size = 10;
 void Newlinedelete();
 

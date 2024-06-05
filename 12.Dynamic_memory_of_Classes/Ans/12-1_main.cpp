@@ -1,4 +1,4 @@
-#include "cow.h"
+#include "../header/cow.h"
 #include <iostream>
 using std::cout;
 

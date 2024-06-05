@@ -1,5 +1,5 @@
 #include <iostream>
-#include "sales.h"
+#include "../header/sales.h"
 
 namespace
 {

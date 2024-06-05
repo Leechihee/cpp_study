@@ -1,4 +1,4 @@
-#include "tv.h"
+#include "../header/tv.h"
 #include <iostream>
 
 int main()

@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cctype>
-#include "Stack.h"
+#include "../header/Stack.h"
 
 namespace
 {

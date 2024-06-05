@@ -1,4 +1,4 @@
-#include "stonewt.h"
+#include "../header/stonewt2.h"
 #include <cfloat>
 
 namespace

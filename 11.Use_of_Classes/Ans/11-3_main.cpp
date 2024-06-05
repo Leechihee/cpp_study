@@ -1,4 +1,4 @@
-#include "vect.h"
+#include "../header/vect1.h"
 #include <cstdlib>
 #include <ctime>
 #include <climits>

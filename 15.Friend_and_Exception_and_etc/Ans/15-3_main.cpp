@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cmath>
-#include "excmean.h"
+#include "../header/excmean2.h"
 
 namespace
 {
@@ -47,12 +47,12 @@ int main()
 double hmean(double a, double b) throw(bad_hmean)
 {
     if(a == -b)
-        throw bad_hmean();
+        throw bad_hmean(a,b);
     return 2.0 * a * b / (a+b);
 }
 double gmean(double a, double b) throw(bad_gmean)
 {
     if(a < 0 || b < 0)
-        throw bad_gmean();
+        throw bad_gmean(a,b);
     return sqrt(a*b);
 }

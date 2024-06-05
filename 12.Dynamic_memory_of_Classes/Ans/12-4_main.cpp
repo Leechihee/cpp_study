@@ -1,4 +1,4 @@
-#include "Stack.h"
+#include "../header/Stack.h"
 #include <iostream>
 #include <cctype>
 
@@ -6,7 +6,7 @@ using namespace std;
 
 int main()
 {
-    Stack starr[4] = {Stack(),Stack(5),Stack(starr[2])};
+    Stack starr[4] = {Stack(),Stack(5),Stack(starr[1])};
     char frist_ans, ans;
     int st_cho,tar_st;
     Item input, output;

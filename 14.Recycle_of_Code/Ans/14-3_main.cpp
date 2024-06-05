@@ -1,5 +1,5 @@
-#include "worker.h"
-#include "queuetp.h"
+#include "../header/worker.h"
+#include "../header/queuetp.h"
 #include <cctype>
 
 void newlinedelete();

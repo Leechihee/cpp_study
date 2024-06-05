@@ -1,4 +1,4 @@
-#include "Stock.h"
+#include "../header/Stock.h"
 
 const int STKS = 4;
 

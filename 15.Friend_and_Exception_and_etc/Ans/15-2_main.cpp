@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cmath>
-#include "excmean.h"
+#include "../header/excmean1.h"
 
 namespace
 {

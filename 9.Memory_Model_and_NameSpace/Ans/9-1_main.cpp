@@ -1,5 +1,5 @@
 #include <iostream>
-#include "golf.h"
+#include "../header/golf.h"
 
 namespace
 {

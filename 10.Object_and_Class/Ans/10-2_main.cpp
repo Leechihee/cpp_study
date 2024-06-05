@@ -1,5 +1,5 @@
 #include <iostream>
-#include "person.h"
+#include "../header/person.h"
 
 namespace
 {

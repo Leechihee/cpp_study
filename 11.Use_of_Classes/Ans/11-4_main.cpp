@@ -1,4 +1,4 @@
-#include "mytime.h"
+#include "../header/mytime.h"
 
 int main()
 {

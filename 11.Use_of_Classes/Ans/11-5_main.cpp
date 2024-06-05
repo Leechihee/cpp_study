@@ -1,4 +1,4 @@
-#include "stonewt.h"
+#include "../header/stonewt1.h"
 
 int main()
 {

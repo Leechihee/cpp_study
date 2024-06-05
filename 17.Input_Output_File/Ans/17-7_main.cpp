@@ -1,6 +1,6 @@
 #include <algorithm>
 #include <cctype>
-#include "Str.h"
+#include "../header/Str.h"
 
 int main()
 {

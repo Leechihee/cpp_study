@@ -1,5 +1,5 @@
 #include <iostream>
-#include "List.h"
+#include "../header/List.h"
 
 void sq(double &);
 
