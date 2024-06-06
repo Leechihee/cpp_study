@@ -25,4 +25,5 @@ private:
 	mode m;
 };
 
+#include "File.cpp"
 #endif

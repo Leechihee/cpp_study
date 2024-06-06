@@ -13,4 +13,5 @@ public:
 	int ret_score(void) {return score;}
 };
 
+#include "number_baseball.cpp"
 #endif
